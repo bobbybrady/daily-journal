@@ -30,3 +30,32 @@ journalEntries.push(journalEntryOne)
 journalEntries.push(journalEntryTwo)
 
 console.log(journalEntries)
+const toHTML = document.querySelector("#entries")
+const makeJournalEntryComponent = (object) => {
+    return `
+    <article class = "entryLog">
+        <fieldset>
+            <h2>${object.concepts}</h2>
+            <h3>${object.date}</h3>
+            <p>${object.journal}</p>
+            <h4>${object.mood}</h4>
+        </fieldset>
+    </article>`
+
+}
+// const journal = makeJournalEntryComponent()
+
+let allEntries = ""
+let fragment = document.createDocumentFragment()
+const renderJournalEntries = (entries) => {
+    entries.forEach(entry => {
+        let journal = makeJournalEntryComponent(entry)
+        allEntries += journal
+        console.log(journal)
+    });
+    toHTML.innerHTML = allEntries
+}
+
+renderJournalEntries(journalEntries)
+
+
