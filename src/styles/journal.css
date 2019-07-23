@@ -1,3 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
+
+body {
+    background-color: #fcf8f2;
+}
 .form--column {
     display: flex;
     flex-direction: column;
@@ -16,7 +21,53 @@
 	margin: 1%;	
 }
 
-.entryLog:hover{
+.entryLogs:hover{
     background-color: bisque;
     box-shadow: 2px 2px 2px 2px gray;
+}
+
+@font-face {
+    font-family: 'rocket_rinderregular';
+    src: url('rocket_rinder-webfont.woff2') format('woff2'),
+         url('rocket_rinder-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.headline {
+    font-family: 'rocket_rinderregular', sans-serif;
+    text-align: center;
+    font-size: 250px;
+    margin: 20px;
+    -webkit-text-fill-color: #fcf8f2;
+    -webkit-text-stroke: 4px #0e1a5d;
+    text-shadow: 20px 13px 14px #e31687;
+    /* -webkit-filter: drop-shadow(4px 4px 25px #e31687); */
+}
+.headline__2 {
+    /* position: absolute; */
+    text-align: center;
+    margin: 0px;
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 160px;
+    color: #16e0e3;
+    transform:rotate(-15deg);
+    margin-left: 450px;
+    margin-top: -150px;
+    -webkit-text-stroke: 1px #13bbbe;
+    -webkit-filter: drop-shadow(2px 2px 20px #13bbbe);
+}
+
+.header {
+    background-color: #fcf8f2;
+    
+}
+
+.style1 {
+    background-color: darkgrey;
+    margin-top: -150px;
+    margin-bottom: 150px;
+    position: relative; right: 1000px;
+    height: 7px;
 }

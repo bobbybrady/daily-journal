@@ -34,7 +34,7 @@ const toHTML = document.querySelector("#entries")
 const makeJournalEntryComponent = (object) => {
     return `
     <article class = "entryLog">
-        <fieldset>
+        <fieldset class ="entryLogs">
             <h2>${object.concepts}</h2>
             <h3>${object.date}</h3>
             <p>${object.journal}</p>
@@ -58,4 +58,14 @@ const renderJournalEntries = (entries) => {
 
 renderJournalEntries(journalEntries)
 
+// const createSection1 = (array) => {
+//     array.forEach(message => {
+//         const section = document.createElement('section')
+//         section.className = "message"
+//         section.textContent = message
+//         fragment.appendChild(section)
+        
+//     });
+//     toHTML.appendChild(fragment)
+// }
 
