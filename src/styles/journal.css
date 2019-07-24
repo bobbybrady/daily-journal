@@ -1,7 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
 
 body {
-    background-color: #fcf8f2;
+    background-color: black;
+    padding: 0;
+    margin: 0 0 0 0;
 }
 .form--column {
     display: flex;
@@ -20,7 +22,7 @@ body {
     width: 32%;
 	margin: 1%;	
 }
-
+ 
 .entryLogs:hover{
     background-color: bisque;
     box-shadow: 2px 2px 2px 2px gray;
@@ -39,7 +41,8 @@ body {
     font-family: 'rocket_rinderregular', sans-serif;
     text-align: center;
     font-size: 250px;
-    margin: 20px;
+    margin: 0px;
+    padding-top: 20px;
     -webkit-text-fill-color: #fcf8f2;
     -webkit-text-stroke: 4px #0e1a5d;
     text-shadow: 20px 13px 14px #e31687;
@@ -60,14 +63,24 @@ body {
 }
 
 .header {
-    background-color: #fcf8f2;
+    /* background-color: #fcf8f2; */
+    margin: 0px;
+    width: 100%;
+    /* background-image: url(http://www.geodomehome.org/images/80s-patterns-google-search-art-pattern-90s-pattern__aHR0cHM6Ly9pLnBpbmltZy5jb20vb3JpZ2luYWxzL2JlL2IxLzY5L2JlYjE2OTUwM2UyOTFiZmRmNGIxZjk2ODgyNWNhNjFiLmpwZw==.jpg); */
+    background-image: url(https://i.pinimg.com/originals/c1/2a/3d/c12a3d20dc24e8f6b5ad5469e4f03761.jpg);
+    background-size: cover;
+    -webkit-background-size: cover;
     
 }
 
-.style1 {
+.line {
     background-color: darkgrey;
-    margin-top: -150px;
-    margin-bottom: 150px;
-    position: relative; right: 1000px;
-    height: 7px;
+    height: 8px;  
+    margin-left: 75%;
+    margin-top: -132px;
+   
+}
+
+.lineBackground {
+    padding-bottom: 150px;
 }
