@@ -1,6 +1,9 @@
 const toHTML = document.querySelector("#entries")
-const render = {
-    renderJournal (entries) {
+
+const renderJournal = (entries) => {
         toHTML.innerHTML += entries
-}
+    }
+
+const clearDOM = () => {
+    toHTML.innerHTML = ""
 }
