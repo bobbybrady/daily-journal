@@ -5,28 +5,21 @@
       "date": "07/10/2019",
       "concepts": "flexbox",
       "journal": "Today I learned flexbox, by playing the frog game.",
-      "mood": "happy"
+      "mood": "Happy"
     },
     {
       "id": 2,
       "date": "07/11/2019",
       "concepts": "git",
       "journal": "Today I practiced git and pushed all of my repositories to GitHub.",
-      "mood": "content"
+      "mood": "Content"
     },
     {
       "id": 3,
       "date": "07/12/2019",
       "concepts": "Javascript Objects",
       "journal": "Practiced creating objects as well as targeting specfic",
-      "mood": "happy"
-    },
-    {
-      "id": 4,
-      "date": "2019-08-15",
-      "concepts": "hello",
-      "journal": "Hi",
-      "mood": "happy"
+      "mood": "Happy"
     }
   ]
 }

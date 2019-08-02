@@ -1,12 +1,6 @@
- const getAndPostAll = () => {API.getData().then(entries => {
-    for (const entry of entries) {
-        const convertedEntry = journalHTML.makeJournalEntryComponent(entry)
-        renderJournal(convertedEntry)
-    }
-})
- }
+API.getData().then(parsedData => renderJournal(parsedData))
 
- getAndPostAll()
+
 const re = new RegExp(/^[a-z0-9(){}:;., ]+$/i)
 const curse = new RegExp(/^(fuck|shit|asshole|bitch|ass)+$/i)
 
@@ -15,8 +9,6 @@ document.querySelector("#submit").addEventListener("click", () => {
     const journalConcept = document.querySelector("#conceptsCovered").value
     const journalEntry = document.querySelector("#journalEntry").value
     const journalMood = document.querySelector("#mood").value
-    // const thing = re.test(journalEntry)
-    // console.log(thing)
     if (journalDate === "") {
         window.alert("Not a valid date")
     } else if (re.test(journalConcept) === false || journalConcept.length > 15) {
@@ -30,9 +22,11 @@ document.querySelector("#submit").addEventListener("click", () => {
     } else {
     const entry = makeJournalObject.makeObject(journalDate, journalConcept, journalEntry, journalMood)
     API.saveJournalEntry(entry).then(() => {
-        clearDOM()
-        getAndPostAll()})
+        API.getData().then(paresedData => {
+            renderJournal(paresedData)
+        })
+    })
     }
-
-
+    
 })
+
