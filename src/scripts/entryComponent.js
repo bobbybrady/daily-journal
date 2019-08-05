@@ -26,3 +26,7 @@ const makeJournalObject = {
         }
     }
 }
+
+export default {
+    journalHTML, makeJournalObject
+}

@@ -1,8 +1,12 @@
+import API from "./data.js"
+import renderJournal from "./entriesDOM.js"
+import toHTML from "./entryComponent.js"
+
 API.getData().then(parsedData => renderJournal(parsedData))
 
 
 const re = new RegExp(/^[a-z0-9(){}:;., ]+$/i)
-const curse = new RegExp(/^(fuck|shit|asshole|bitch|ass)+$/i)
+const curse = new RegExp(/^(fuck |shit |asshole |bitch |ass )+$/i)
 
 document.querySelector("#submit").addEventListener("click", () => {
     const journalDate = document.querySelector("#journalDate").value
@@ -20,7 +24,7 @@ document.querySelector("#submit").addEventListener("click", () => {
     } else if (curse.test(journalEntry) === true) {
         window.alert("No curse words")
     } else {
-    const entry = makeJournalObject.makeObject(journalDate, journalConcept, journalEntry, journalMood)
+    const entry = toHTML.makeJournalObject.makeObject(journalDate, journalConcept, journalEntry, journalMood)
     API.saveJournalEntry(entry).then(() => {
         API.getData().then(paresedData => {
             renderJournal(paresedData)
