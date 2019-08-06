@@ -1,20 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
 
 body {
-    background-color: black;
+    /* background-color: black; */
     padding: 0;
     margin: 0 0 0 0;
 }
 .form--column {
     display: flex;
     flex-direction: column;
-    color: white;
+    /* color: white; */
 }
 
 #entries {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 20px 10px 10px 10px;
 }

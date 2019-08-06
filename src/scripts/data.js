@@ -12,7 +12,11 @@ const API = {
             },
             body: JSON.stringify(entry)
         }) 
-}
+},
+    radioFetch (mood) {
+        return fetch(`http://localhost:8088/entries?mood=${mood}`)
+            .then(entries => entries.json())
+    }
 
 }
 

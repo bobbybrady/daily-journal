@@ -33,11 +33,11 @@
             </fieldset>
             <fieldset class="form--column">
                 <label for="conceptsCovered">Concepts Covered</label>
-                <input type="text" name="conceptsCovered" id="conceptsCovered">
+                <input type="text" name="conceptsCovered" id="conceptsCovered" maxlength="20">
             </fieldset>
             <fieldset class="form--column">
                 <label for="journalEntry">Journal Entry</label>
-                <textarea name="journalEntry" id="journalEntry" cols="20" rows="5"></textarea>
+                <textarea name="journalEntry" id="journalEntry" cols="20" rows="5" maxlength="1000"></textarea>
             </fieldset>
             <fieldset class="form--column">
                 <label for="mood">Mood for the Day</label>
@@ -50,6 +50,27 @@
                     <option value="Bored">Bored</option>
                     <option value="Focused">Focused</option>
                 </select>
+            </fieldset>
+            <fieldset id="moodContainer">
+                <legend>Display a certain mood.</legend>
+                    <input value="Happy" type="radio" name="radio" id="happy">
+                    <label for="Happy">Happy</label>
+                    <input value="Content" type="radio" name="radio" id="content">
+                    <label for="Content">Content</label>
+                    <input value="Frustrated" type="radio" name="radio" id="frustrated">
+                    <label for="Frustrated">Frustrated</label>
+                    <input value="Confused" type="radio" name="radio" id="confused">
+                    <label for="Confused">Confused</label>
+                    <input value="Overwhelmed" type="radio" name="radio" id="overwhelmed">
+                    <label for="Overwhelmed">Overwhelmed</label>
+                    <input value="Bored" type="radio" name="radio" id="bored">
+                    <label for="Bored">Bored</label>
+                    <input value="Focused" type="radio" name="radio" id="focused">
+                    <label for="Focused">Focused</label>
+                    <input value="Display All" type="radio" name="radio" id="all">
+                    <label for="Display All">Display All</label>
+                    
+              
             </fieldset>
             <button type="button" id="submit">Record Journal Entry</button>
         
