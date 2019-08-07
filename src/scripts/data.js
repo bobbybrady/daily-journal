@@ -1,23 +1,31 @@
 const API = {
-    getData () {
+    getData() {
         return fetch("http://localhost:8088/entries")
             .then(entries => entries.json())
     },
 
-    saveJournalEntry (entry) {
-       return fetch("http://localhost:8088/entries", { 
+    saveJournalEntry(entry) {
+        return fetch("http://localhost:8088/entries", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(entry)
-        }) 
-},
-    radioFetch (mood) {
+        })
+    },
+    radioFetch(mood) {
         return fetch(`http://localhost:8088/entries?mood=${mood}`)
             .then(entries => entries.json())
-    }
+    },
 
+    deleteJournalEntry(entryID) {
+        return fetch(`http://localhost:8088/entries/${entryID}`,
+            {
+                method: "DELETE",
+
+            })
+            .then(data => data.json())
+    }
 }
 
 export default API
