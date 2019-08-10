@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Daily Journal</title>
     <link rel="stylesheet" href="styles/journal.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
 </head>
+
 <body>
     <header class="header">
-        <h1 class="headline">Daily</h1>
-        <h3 class="headline__2">Journal</h3>
-        <div class="lineBackground">
+        <div id="trigger"></div>
+        <div class="scrollMagic" id="scrollMagic">
+            <h1 class="headline">Daily</h1>
+            <h3 class="headline__2">Journal</h3>
+        </div>
+        <!-- <div class="lineBackground">
             <div class="overflow">
                 <div class="line"></div>
                 <div class="line1"></div>
@@ -23,62 +33,64 @@
                 <div class="line7"></div>
                 <div class="line8"></div>
                 <div class="line9"></div>
-            </div>
+            </div> -->
         </div>
     </header>
     <div class="container">
-            <fieldset class="form--column">
-                <label for="journalDate">Date of Entry</label>
-                <input type="date" name="journalDate" id="journalDate">
-            </fieldset>
-            <fieldset class="form--column">
-                <label for="conceptsCovered">Concepts Covered</label>
-                <input type="text" name="conceptsCovered" id="conceptsCovered" maxlength="20">
-            </fieldset>
-            <fieldset class="form--column">
-                <label for="journalEntry">Journal Entry</label>
-                <textarea name="journalEntry" id="journalEntry" cols="20" rows="5" maxlength="1000"></textarea>
-            </fieldset>
-            <fieldset class="form--column">
-                <label for="mood">Mood for the Day</label>
-                <select name="mood" id="mood">
-                    <option value="Happy">Happy</option>
-                    <option value="Content">Content</option>
-                    <option value="Frustrated">Frustrated</option>
-                    <option value="Confused">Confused</option>
-                    <option value="Overwhelmed">Overwhelmed</option>
-                    <option value="Bored">Bored</option>
-                    <option value="Focused">Focused</option>
-                </select>
-            </fieldset>
-            <fieldset id="moodContainer">
-                <legend>Display a certain mood.</legend>
-                    <input value="Happy" type="radio" name="radio" id="happy">
-                    <label for="Happy">Happy</label>
-                    <input value="Content" type="radio" name="radio" id="content">
-                    <label for="Content">Content</label>
-                    <input value="Frustrated" type="radio" name="radio" id="frustrated">
-                    <label for="Frustrated">Frustrated</label>
-                    <input value="Confused" type="radio" name="radio" id="confused">
-                    <label for="Confused">Confused</label>
-                    <input value="Overwhelmed" type="radio" name="radio" id="overwhelmed">
-                    <label for="Overwhelmed">Overwhelmed</label>
-                    <input value="Bored" type="radio" name="radio" id="bored">
-                    <label for="Bored">Bored</label>
-                    <input value="Focused" type="radio" name="radio" id="focused">
-                    <label for="Focused">Focused</label>
-                    <input value="Display All" type="radio" name="radio" id="all">
-                    <label for="Display All">Display All</label>
-                    
-              
-            </fieldset>
-            <button type="button" id="submit">Record Journal Entry</button>
-        
+        <fieldset class="form--column">
+            <label for="journalDate">Date of Entry</label>
+            <input type="date" name="journalDate" id="journalDate">
+            <input type="hidden" name="hiddenDate" id="hiddenInput" value="">
+        </fieldset>
+        <fieldset class="form--column">
+            <label for="conceptsCovered">Concepts Covered</label>
+            <input type="text" name="conceptsCovered" id="conceptsCovered" maxlength="20">
+        </fieldset>
+        <fieldset class="form--column">
+            <label for="journalEntry">Journal Entry</label>
+            <textarea name="journalEntry" id="journalEntry" cols="20" rows="5" maxlength="1000"></textarea>
+        </fieldset>
+        <fieldset class="form--column">
+            <label for="mood">Mood for the Day</label>
+            <select name="mood" id="mood">
+                <option value="Happy">Happy</option>
+                <option value="Content">Content</option>
+                <option value="Frustrated">Frustrated</option>
+                <option value="Confused">Confused</option>
+                <option value="Overwhelmed">Overwhelmed</option>
+                <option value="Bored">Bored</option>
+                <option value="Focused">Focused</option>
+            </select>
+        </fieldset>
+        <fieldset id="moodContainer">
+            <legend>Display a certain mood.</legend>
+            <input value="Happy" type="radio" name="radio" id="happy">
+            <label for="Happy">Happy</label>
+            <input value="Content" type="radio" name="radio" id="content">
+            <label for="Content">Content</label>
+            <input value="Frustrated" type="radio" name="radio" id="frustrated">
+            <label for="Frustrated">Frustrated</label>
+            <input value="Confused" type="radio" name="radio" id="confused">
+            <label for="Confused">Confused</label>
+            <input value="Overwhelmed" type="radio" name="radio" id="overwhelmed">
+            <label for="Overwhelmed">Overwhelmed</label>
+            <input value="Bored" type="radio" name="radio" id="bored">
+            <label for="Bored">Bored</label>
+            <input value="Focused" type="radio" name="radio" id="focused">
+            <label for="Focused">Focused</label>
+            <input value="Display All" type="radio" name="radio" id="all">
+            <label for="Display All">Display All</label>
+
+
+        </fieldset>
+        <button type="button" id="submit">Record Journal Entry</button>
+
         <div id="entries">
 
         </div>
     </div>
-    
+    <!-- <script src="./scripts/scrollmagic.js"></script> -->
     <script type="module" src="scripts/journal.js"></script>
 </body>
+
 </html>

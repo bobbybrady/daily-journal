@@ -55,20 +55,24 @@ body {
     text-shadow: 20px 13px 14px #e31687;
     /* -webkit-filter: drop-shadow(4px 4px 25px #e31687); */
     /* z-index: 2; */
+    /* transform: scale(4); */
 }
 .headline__2 {
-    /* position: absolute; */
     text-align: center;
     margin: 0px;
     font-family: 'Mr Dafoe', cursive;
     font-size: 160px;
     color: #16e0e3;
     transform:rotate(-15deg);
-    margin-left: 450px;
-    margin-top: -150px;
+    /* margin-right: 150px; */
     -webkit-text-stroke: 1px #13bbbe;
     -webkit-filter: drop-shadow(2px 2px 20px #13bbbe);
+    /* /*magic */
+    /* transform:rotate(-15deg) scale(4); */
+    margin-left: 450px;
+    margin-top: -150px;
 }
+
 
 .header {
     /* background-color: #fcf8f2; */
@@ -78,6 +82,8 @@ body {
     background-image: url(https://i.pinimg.com/originals/c1/2a/3d/c12a3d20dc24e8f6b5ad5469e4f03761.jpg);
     background-size: cover;
     -webkit-background-size: cover;
+    /*scroll magic */
+    /* height: 1000px; */
     
 }
 

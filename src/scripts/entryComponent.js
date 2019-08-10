@@ -9,6 +9,7 @@ const journalHTML = {
                 <h4>${object.mood}</h4>
             </section>
             <button class = "delete" id = "delete--${object.id}">Delete</button>
+            <button class = "edit" id = "edit--${object.id}">Edit</button>
         </article>`
     
 }

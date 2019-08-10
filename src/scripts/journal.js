@@ -12,34 +12,49 @@ API.getData().then(parsedData =>  {
 
 // let data = JSON.parse(sessionStorage.getItem("journalEntriesObject"))
 const re = new RegExp(/^[a-z0-9(){}:;., ]+$/i)
-const curse = new RegExp(/^(fuck|shit|asshole|bitch|ass)+$/i)
-
+const curse = new RegExp(/^fuck|shit|asshole|bitch|ass/i)
+let hiddenInput = document.querySelector("#hiddenInput")
+let journalDate = document.querySelector("#journalDate")
+let journalConcept = document.querySelector("#conceptsCovered")
+let journalEntry = document.querySelector("#journalEntry")
+let journalMood = document.querySelector("#mood")
 document.querySelector("#submit").addEventListener("click", () => {
-    const journalDate = document.querySelector("#journalDate").value
-    const journalConcept = document.querySelector("#conceptsCovered").value
-    const journalEntry = document.querySelector("#journalEntry").value
-    const journalMood = document.querySelector("#mood").value
+    if (hiddenInput.value !== "") {
+        API.editEntry(hiddenInput.value).then(() => {
+            API.getData().then(parsedData => {
+                storageArray = []
+                renderJournal(parsedData)
+                storageArray.push(parsedData)
+                
+            })
+        })
+    } else {
     if (journalDate === "") {
         window.alert("Not a valid date")
-    } else if (re.test(journalConcept) === false) {
+    } else if (re.test(journalConcept.value) === false) {
         window.alert("Not a valid Concept")
-    } else if (re.test(journalEntry) === false) {
+    } else if (re.test(journalEntry.value) === false) {
         window.alert("Not a valid entry")
-    } else if (curse.test(journalConcept) === true) {
+    } else if (curse.test(journalConcept.value) === true) {
         window.alert("No curse words")
-    } else if (curse.test(journalEntry) === true) {
+    } else if (curse.test(journalEntry.value) === true) {
         window.alert("No curse words")
     } else {
-        const entry = toHTML.makeJournalObject.makeObject(journalDate, journalConcept, journalEntry, journalMood)
+        const entry = toHTML.makeJournalObject.makeObject(journalDate.value, journalConcept.value, journalEntry.value, journalMood.value)
         API.saveJournalEntry(entry).then(() => {
             API.getData().then(parsedData => {
-                    storageArray = []
-                    renderJournal(parsedData)
-                    storageArray.push(parsedData)
+                storageArray = []
+                renderJournal(parsedData)
+                storageArray.push(parsedData)
                 
             })
         })
     }
+}
+    journalConcept.value = ""
+    journalDate.value = ""
+    journalEntry.value = ""
+    journalMood.value = ""
 
 })
 
@@ -71,4 +86,17 @@ deleteButton.addEventListener("click", (event) =>{
     }
 })
 
+
+deleteButton.addEventListener("click", () => {
+    if (event.target.id.startsWith("edit")) {
+        const ID = event.target.id.split("--")[1]
+        API.getOneEntry(ID).then(parsedEntry => {
+            journalDate.value = parsedEntry.date
+            journalConcept.value = parsedEntry.concepts
+            journalEntry.value = parsedEntry.journal
+            journalMood.value = parsedEntry.mood
+            hiddenInput.value = parsedEntry.id
+        })
+    }
+})
 
