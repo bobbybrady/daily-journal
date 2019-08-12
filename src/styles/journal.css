@@ -9,6 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     /* color: white; */
+    /* border: 0; */
 }
 
 #entries {
@@ -27,6 +28,14 @@ body {
     border: solid 1px white;
     padding: 15px 15px 15px 15px;
     margin-bottom: 20px;
+}
+
+
+.entryLog {
+    flex-basis: 30%;
+    height: 200px;
+    overflow: scroll;
+    padding: 15px 15px 15px 15px;
 }
 
  

@@ -33,10 +33,10 @@ const API = {
 
     editEntry(ID) {
         const updatedObject = {
-            date: document.querySelector("#journalDate").value,
-            concepts: document.querySelector("#conceptsCovered").value,
-            journal: document.querySelector("#journalEntry").value,
-            mood: document.querySelector("#mood").value
+            date: document.querySelector("#journalDateEdit").value,
+            concepts: document.querySelector("#conceptsCoveredEdit").value,
+            journal: document.querySelector("#journalEntryEdit").value,
+            mood: document.querySelector("#moodEdit").value
         }
         return fetch(`http://localhost:8088/entries/${ID}`, {
             method: "PUT",

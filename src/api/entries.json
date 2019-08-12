@@ -8,18 +8,18 @@
       "mood": "Happy"
     },
     {
-      "id": 2,
-      "date": "2019-11-07",
+      "date": "2019-11-08",
       "concepts": "git",
       "journal": "Today I practiced git and pushed all of my repositories to GitHub.",
-      "mood": "Content"
+      "mood": "Content",
+      "id": 2
     },
     {
-      "id": 3,
-      "date": "2019-12-07",
+      "date": "2019-12-08",
       "concepts": "Javascript Objects",
       "journal": "Practiced creating objects as well as targeting specfic",
-      "mood": "Happy"
+      "mood": "Happy",
+      "id": 3
     },
     {
       "id": 4,
@@ -50,11 +50,11 @@
       "mood": "Confused"
     },
     {
-      "id": 8,
-      "date": "2019-08-07",
-      "concepts": "Test 4",
-      "journal": "Test",
-      "mood": "Frustrated"
+      "date": "2019-08-08",
+      "concepts": "Test 5",
+      "journal": "Hi",
+      "mood": "Frustrated",
+      "id": 8
     }
   ]
 }

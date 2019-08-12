@@ -11,6 +11,8 @@ const renderJournal = (entries) => {
     });
 }
 
+
+
 export default renderJournal
 
 
