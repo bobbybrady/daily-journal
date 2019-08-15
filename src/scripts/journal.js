@@ -68,7 +68,7 @@ radio.addEventListener("click", (event) => {
         if (mood === "Display All") {
             renderJournal(storageArray[0])
         } else {
-            const filteredItem = storageArray[0].filter(item => item.mood === mood)
+            const filteredItem = storageArray[0].filter(item => item.moodId === parseInt(mood))
             renderJournal(filteredItem)
         }
     }
@@ -119,7 +119,8 @@ deleteButton.addEventListener("click", () => {
             dateEdit.value = parsedEntry.date
             conceptEdit.value = parsedEntry.concepts
             entryEdit.value = parsedEntry.journal
-            moodEdit.value = parsedEntry.mood
+            moodEdit.value = parsedEntry.moodId
+            
         })
     }
 })
@@ -138,4 +139,13 @@ deleteButton.addEventListener("click", (event) => {
             })
         })
     }
+})
+
+const searchInput = document.querySelector("#searchInput")
+
+searchInput.addEventListener("keyup", () => {
+    const search = searchInput.value
+    const filterArray = storageArray[0].filter(item => (item.concepts.toLowerCase().includes(search.toLowerCase()) || item.date.includes(search.toLowerCase()) || item.journal.toLowerCase().includes(search.toLowerCase()) || item.mood.mood.toLowerCase().includes(search.toLowerCase()) ))
+    renderJournal(filterArray)
+
 })

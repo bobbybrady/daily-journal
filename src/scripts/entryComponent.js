@@ -6,7 +6,7 @@ const journalHTML = {
                 <h2>${object.concepts}</h2>
                 <h3>${object.date}</h3>
                 <p class="flexP">${object.journal}</p>
-                <h4>${object.mood}</h4>
+                <h4>${object.mood.mood}</h4>
             </section>
             <button class = "delete" id = "delete--${object.id}">Delete</button>
             <button class = "edit" id = "edit--${object.id}">Edit</button>
@@ -21,7 +21,7 @@ const makeJournalObject = {
             date: date,
             concepts: concept,
             journal: entry,
-            mood: mood
+            moodId: parseInt(mood)
         }
     }
 }
@@ -43,13 +43,13 @@ const makeInputFields = (object) => {
         <fieldset class="form--column">
             <label for="mood">Mood for the Day</label>
             <select name="mood" id="moodEdit">
-                <option value="Happy">Happy</option>
-                <option value="Content">Content</option>
-                <option value="Frustrated">Frustrated</option>
-                <option value="Confused">Confused</option>
-                <option value="Overwhelmed">Overwhelmed</option>
-                <option value="Bored">Bored</option>
-                <option value="Focused">Focused</option>
+                <option value="1">Happy</option>
+                <option value="2">Content</option>
+                <option value="3">Frustrated</option>
+                <option value="4">Confused</option>
+                <option value="5">Overwhelmed</option>
+                <option value="6">Bored</option>
+                <option value="7">Focused</option>
             </select>
         </fieldset>
     </section>

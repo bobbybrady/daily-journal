@@ -1,6 +1,6 @@
 const API = {
     getData() {
-        return fetch("http://localhost:8088/entries")
+        return fetch("http://localhost:8088/entries/?_expand=mood")
             .then(entries => entries.json())
     },
 
@@ -36,7 +36,7 @@ const API = {
             date: document.querySelector("#journalDateEdit").value,
             concepts: document.querySelector("#conceptsCoveredEdit").value,
             journal: document.querySelector("#journalEntryEdit").value,
-            mood: document.querySelector("#moodEdit").value
+            moodId: parseInt(document.querySelector("#moodEdit").value)
         }
         return fetch(`http://localhost:8088/entries/${ID}`, {
             method: "PUT",

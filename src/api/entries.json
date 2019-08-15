@@ -5,56 +5,79 @@
       "date": "2019-10-07",
       "concepts": "flexbox",
       "journal": "Today I learned flexbox, by playing the frog game.",
-      "mood": "Happy"
+      "moodId": 1
     },
     {
       "date": "2019-11-08",
       "concepts": "git",
       "journal": "Today I practiced git and pushed all of my repositories to GitHub.",
-      "mood": "Content",
+      "moodId": 5,
       "id": 2
     },
     {
       "date": "2019-12-08",
       "concepts": "Javascript Objects",
       "journal": "Practiced creating objects as well as targeting specfic",
-      "mood": "Happy",
+      "moodId": 1,
       "id": 3
-    },
-    {
-      "id": 4,
-      "date": "2019-08-07",
-      "concepts": "Happy",
-      "journal": "Test",
-      "mood": "Focused"
     },
     {
       "id": 5,
       "date": "2019-08-07",
       "concepts": "Test 2",
       "journal": "Test",
-      "mood": "Bored"
+      "moodId": 6
     },
     {
-      "id": 6,
       "date": "2019-08-07",
       "concepts": "Test 3",
       "journal": "Test",
-      "mood": "Overwhelmed"
+      "moodId": 2,
+      "id": 6
     },
     {
-      "id": 7,
-      "date": "2019-08-07",
+      "date": "2019-08-15",
       "concepts": "Overwhelmed",
-      "journal": "Test",
-      "mood": "Confused"
+      "journal": "Testaerdgsdfgsdfgasdfgdsfgdfsgdsgs",
+      "moodId": 2,
+      "id": 7
     },
     {
       "date": "2019-08-08",
       "concepts": "Test 5",
       "journal": "Hi",
-      "mood": "Frustrated",
+      "moodId": 3,
       "id": 8
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "mood": "Happy"
+    },
+    {
+      "id": 2,
+      "mood": "Content"
+    },
+    {
+      "id": 3,
+      "mood": "Frustrated"
+    },
+    {
+      "id": 4,
+      "mood": "Confused"
+    },
+    {
+      "id": 5,
+      "mood": "Overwhelmed"
+    },
+    {
+      "id": 6,
+      "mood": "Bored"
+    },
+    {
+      "id": 7,
+      "mood": "Focused"
     }
   ]
 }

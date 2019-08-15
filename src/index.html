@@ -53,36 +53,42 @@
         <fieldset class="form--column">
             <label for="mood">Mood for the Day</label>
             <select name="mood" id="mood">
-                <option value="Happy">Happy</option>
-                <option value="Content">Content</option>
-                <option value="Frustrated">Frustrated</option>
-                <option value="Confused">Confused</option>
-                <option value="Overwhelmed">Overwhelmed</option>
-                <option value="Bored">Bored</option>
-                <option value="Focused">Focused</option>
+                <option value="1">Happy</option>
+                <option value="2">Content</option>
+                <option value="3">Frustrated</option>
+                <option value="4">Confused</option>
+                <option value="5">Overwhelmed</option>
+                <option value="6">Bored</option>
+                <option value="7">Focused</option>
             </select>
         </fieldset>
-        <fieldset id="moodContainer">
-            <legend>Display a certain mood.</legend>
-            <input value="Happy" type="radio" name="radio" id="happy">
-            <label for="Happy">Happy</label>
-            <input value="Content" type="radio" name="radio" id="content">
-            <label for="Content">Content</label>
-            <input value="Frustrated" type="radio" name="radio" id="frustrated">
-            <label for="Frustrated">Frustrated</label>
-            <input value="Confused" type="radio" name="radio" id="confused">
-            <label for="Confused">Confused</label>
-            <input value="Overwhelmed" type="radio" name="radio" id="overwhelmed">
-            <label for="Overwhelmed">Overwhelmed</label>
-            <input value="Bored" type="radio" name="radio" id="bored">
-            <label for="Bored">Bored</label>
-            <input value="Focused" type="radio" name="radio" id="focused">
-            <label for="Focused">Focused</label>
-            <input value="Display All" type="radio" name="radio" id="all">
-            <label for="Display All">Display All</label>
+        <section class="moodContainer">
+            <fieldset id="moodContainer" class="moods">
+                <legend>Display a certain mood.</legend>
+                <input value="1" type="radio" name="radio" id="happy">
+                <label for="Happy">Happy</label>
+                <input value="2" type="radio" name="radio" id="content">
+                <label for="Content">Content</label>
+                <input value="3" type="radio" name="radio" id="frustrated">
+                <label for="Frustrated">Frustrated</label>
+                <input value="4" type="radio" name="radio" id="confused">
+                <label for="Confused">Confused</label>
+                <input value="5" type="radio" name="radio" id="overwhelmed">
+                <label for="Overwhelmed">Overwhelmed</label>
+                <input value="6" type="radio" name="radio" id="bored">
+                <label for="Bored">Bored</label>
+                <input value="7" type="radio" name="radio" id="focused">
+                <label for="Focused">Focused</label>
+                <input value="Display All" type="radio" name="radio" id="all">
+                <label for="Display All">Display All</label>
+            </fieldset>
+                <fieldset class="moods, search">
+                    <legend for="search">Search</legend>
+                    <input type="text" class= "searchInput" placeholder="Enter a search item" id="searchInput">
+                </fieldset>
+        </section>
 
 
-        </fieldset>
         <button type="button" id="submit">Record Journal Entry</button>
 
         <div id="entries">

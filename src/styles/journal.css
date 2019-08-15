@@ -168,5 +168,21 @@ body {
    
 }
 
+.moods {
+    flex-basis: 40%;
+}
+
+.moodContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.search {
+    padding: 15px;
+}
+
+.searchInput {
+    width: 400px;
+}
 
 
